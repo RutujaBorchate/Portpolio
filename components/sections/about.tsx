@@ -8,7 +8,7 @@ const highlights = [
   {
     icon: Code2,
     title: "Full-Stack Development",
-    description: "Building end-to-end applications with React, Node.js, and databases",
+    description: "Building end-to-end applications with Nextjs, Node.js, and databases",
   },
   {
     icon: Palette,
