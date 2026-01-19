@@ -50,7 +50,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl sm:text-2xl lg:text-3xl font-medium text-primary mb-6"
           >
-            Full Stack Developer
+            Full Stack Developer & ML Engineer
           </motion.h2>
 
           {/* Tagline */}

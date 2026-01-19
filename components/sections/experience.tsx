@@ -12,7 +12,7 @@ const experiences = [
     location: "Pune, Maharashtra, India",
     period: "2022 - 2026",
     description:
-      "Currently pursuing B.Tech with a CGPA of 8.59/10. Specializing in software development, machine learning, and web technologies. Active member and Joint Head of NSS (2024-2025), leading event and stage management for college-wide programs.",
+      "Currently pursuing B.Tech with a CGPA of 8.76/10. Specializing in software development, machine learning, and web technologies. Active member and Joint Head of NSS (2024-2025), leading event and stage management for college-wide programs.",
     skills: ["DSA", "Software Engineering", "Machine Learning", "Web Development"],
   },
   {
