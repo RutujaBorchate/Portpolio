@@ -76,7 +76,7 @@ export function AboutSection() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a final-year B.Tech student in Electronics and Telecommunication 
                 Engineering at Vishwakarma Institute of Information Technology (VIIT), 
-                Pune, graduating in 2026 with a CGPA of 8.59/10. I'm passionate about 
+                Pune, graduating in 2026 with a CGPA of 8.76/10. I'm passionate about 
                 solving real-world problems through technology, with expertise in 
                 full-stack development and machine learning.
               </p>
