@@ -105,6 +105,13 @@ After deployment completes:
 
 ## ⚠️ Common Deployment Errors & Solutions
 
+### Error: "Missing required environment variable: DATABASE_URL" during install
+
+**Cause:** The `prisma.config.ts` file was trying to load DATABASE_URL during the install phase
+
+**Solution:**
+✅ **FIXED!** Removed `prisma.config.ts` file - it's not needed for Next.js deployment
+
 ### Error: "Failed to collect page data for /api/contact"
 
 **Cause:** Database connection failed during build
