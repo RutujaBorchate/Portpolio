@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
+// Configure the runtime for Vercel
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -42,9 +46,20 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error('Error saving contact:', error);
+    
+    // Return more detailed error for debugging
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Detailed error:', errorMessage);
+    
     return NextResponse.json(
-      { error: 'Failed to submit contact form' },
+      { 
+        error: 'Failed to submit contact form',
+        details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+      },
       { status: 500 }
     );
+  } finally {
+    // Disconnect Prisma in serverless environment
+    await prisma.$disconnect();
   }
 }

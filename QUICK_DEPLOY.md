@@ -25,9 +25,13 @@ Then deploy via Vercel Dashboard or:
 vercel
 ```
 
-## 3️⃣ Test
+## 3️⃣ Test & Monitor
 
 Visit your deployed site → Contact section → Submit a test message
+
+**If form doesn't work:**
+- Check Vercel Dashboard → Logs → Functions
+- See `VERCEL_TROUBLESHOOTING.md` for detailed debugging steps
 
 ---
 
@@ -37,6 +41,8 @@ Visit your deployed site → Contact section → Submit a test message
 - Contact form saves to database ✓
 - Build script includes prisma generate ✓
 - Vercel deployment error fixed (removed prisma.config.ts) ✓
+- API route configured for serverless (runtime: nodejs) ✓
+- Proper Prisma connection handling for Vercel ✓
 - Ready for Vercel deployment ✓
 
 ---
