@@ -49,15 +49,33 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      })
 
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormState({ name: "", email: "", message: "" })
+      const data = await response.json()
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitted(false), 5000)
+      if (response.ok) {
+        setSubmitted(true)
+        setFormState({ name: "", email: "", message: "" })
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        console.error('Error submitting form:', data.error)
+        alert(data.error || 'Failed to submit form. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Failed to submit form. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (
